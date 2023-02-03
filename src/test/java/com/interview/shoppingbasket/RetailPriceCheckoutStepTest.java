@@ -45,5 +45,4 @@ public class RetailPriceCheckoutStepTest {
         Mockito.verify(checkoutContext).setRetailPriceTotal(3.99*10+2*10);
 
     }
-
 }

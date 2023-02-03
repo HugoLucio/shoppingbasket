@@ -1,23 +1,25 @@
 package com.interview.shoppingbasket;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import java.util.List;
+
+@Data
+@AllArgsConstructor
 class CheckoutContext {
     private Basket basket;
     private double retailPriceTotal = 0.0;
+    private List<Promotion> promotions;
 
-    public void setRetailPriceTotal(double retailPriceTotal) {
-        this.retailPriceTotal = retailPriceTotal;
-    }
 
-    CheckoutContext(Basket basket) {
+    CheckoutContext(Basket basket, List<Promotion> promotions) {
         this.basket = basket;
+        this.promotions = promotions;
     }
 
     public PaymentSummary paymentSummary() {
         return new PaymentSummary(retailPriceTotal);
     }
 
-
-    public Basket getBasket() {
-        return basket;
-    }
 }

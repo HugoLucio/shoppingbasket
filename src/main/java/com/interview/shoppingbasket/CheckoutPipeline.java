@@ -7,8 +7,8 @@ public class CheckoutPipeline {
 
     private List<CheckoutStep> steps = new ArrayList<>();
 
-    public PaymentSummary checkout(Basket basket) {
-        CheckoutContext checkoutContext = new CheckoutContext(basket);
+    public PaymentSummary checkout(Basket basket, List<Promotion> promotions) {
+        CheckoutContext checkoutContext = new CheckoutContext(basket, promotions);
         for (CheckoutStep checkoutStep : steps) {
             checkoutStep.execute(checkoutContext);
         }
