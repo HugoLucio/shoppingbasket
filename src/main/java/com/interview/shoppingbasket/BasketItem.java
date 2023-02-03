@@ -6,7 +6,7 @@ import lombok.Data;
 public class BasketItem {
     private String productCode;
     private String productName;
-    private int quantity;
+    int quantity;
     private double productRetailPrice;
 
 }
